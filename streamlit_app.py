@@ -3,7 +3,6 @@ import pandas as pd
 import numpy as np
 import functions
 import openai
-import plotly.express as px
 
 with st.sidebar:
     openai_api_key = st.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
@@ -33,7 +32,7 @@ if prompt := st.chat_input():
 
 st.set_page_config(layout = "wide", page_icon = 'logo.png', page_title='EDA')
 
-st.header("📝Exploratory Data Analysis Tool for Geoscience Projects")
+st.header("📝Exploratory Data Analysis Tool for Geoscience")
 
 st.write('<p style="font-size:160%">You will be able to✅:</p>', unsafe_allow_html=True)
 
