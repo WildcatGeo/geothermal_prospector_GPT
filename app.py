@@ -27,9 +27,16 @@ st.write('<p style="font-size:130%">Import Dataset</p>', unsafe_allow_html=True)
 file_format = st.radio('Select file format:', ('csv', 'excel'), key='file_format')
 dataset = st.file_uploader(label = '')
 
-use_defo = st.checkbox('Use example Dataset')
+if uploaded_file is not None:
+    if uploaded_file.type == 'text/csv':
+        df = pd.read_csv(uploaded_file)
+    elif uploaded_file.type == 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet':
+        df = pd.read_excel(uploaded_file)
+    st.write(df)
+
+use_defo = st.checkbox('Use example MWD Survey Dataset')
 if use_defo:
-    dataset = 'CarPrice_Assignment.csv'
+    dataset = 'Surveys.csv'
 
 st.sidebar.header('Import Dataset to Use Available Features: 👉')
 
