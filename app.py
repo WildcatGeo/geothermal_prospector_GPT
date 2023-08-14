@@ -26,7 +26,7 @@ if uploaded_file is not None:
 
 use_defo = st.checkbox('Use example MWD Survey Dataset')
 if use_defo:
-    dataset = 'Surveys.csv'
+    dataset = 'boem_data_complete.xlsx'
 
 st.sidebar.header('Import Dataset to Use Available Features: 👉')
 
